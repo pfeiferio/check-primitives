@@ -1,0 +1,52 @@
+{
+  "name": "@pfeiferio/check-primitives",
+  "version": "1.0.1",
+  "description": "Minimal strict runtime primitive checks for JavaScript and TypeScript",
+  "license": "MIT",
+  "author": "Pascal Pfeifer <pascal@pfeifer.zone>",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "validation",
+    "type-check",
+    "runtime-validation",
+    "typescript",
+    "assert"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfeiferio/check-primitives.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pfeiferio/check-primitives/issues"
+  },
+  "homepage": "https://github.com/pfeiferio/check-primitives#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test",
+    "test:coverage": "npm run build && node --test --experimental-test-coverage",
+    "test:watch": "node --test --watch",
+    "prepublishOnly": "npm run clean && npm test",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "typescript": "^5.9.3"
+  }
+}
